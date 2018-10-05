@@ -1,0 +1,72 @@
+@tailwind preflight;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.order-1 {
+  order: 1;
+}
+
+@media (min-width: 992px) {
+  .lg\:order-0 {
+    order: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .xl\:p-t-32 {
+    top: 8rem;
+  }
+}
+
+.blog-post {
+  max-width: 45rem;
+}
+
+.blog-post > *:first-child {
+  margin-top: 0;
+}
+
+.excerpt h2,
+.excerpt h3,
+.blog-post h2,
+.blog-post h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.blog-post h2,
+.blog-post h3 {
+  @apply text-black
+}
+
+.excerpt h2 + h3,
+.blog-post h2 + h3 {
+  margin-top: 1rem;
+}
+
+.excerpt p,
+.blog-post p {
+  line-height: 1.5;
+  margin: 1rem 0;
+  @apply text-grey-darker text-lg font-serif
+}
+
+pre.prettyprinted {
+  background: #000;
+  border-radius: .4rem;
+  line-height: 1.5;
+  padding: 1em;
+  overflow-x: scroll;
+}
+
+code {
+  font-size: .75rem;
+  @apply text-xs font-mono
+}
+
+pre.prettyprinted::-webkit-scrollbar {
+  height: 0;
+}
