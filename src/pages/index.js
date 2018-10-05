@@ -1,21 +1,19 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
+import Excerpt from '../components/excerpt'
 
 const IndexPage = ({ data }) => (
   <Layout title="Nathan Heffley | Specializing in Progressive Web Apps">
     <main className='container mx-auto p-6 pt-32'>
       {data.allContentfulBlogPost.edges.map(({ node }) => (
-          <div key={node.id} className='excerpt'>
-            <h2>
-              <Link to={node.slug} className='no-underline text-black'>{node.title}</Link>
-            </h2>
-            <h3 className='text-grey'>
-              {node.createdAt}
-            </h3>
-            <p>{node.content.childMarkdownRemark.excerpt}</p>
-          </div>
+          <Excerpt key={node.id}
+            slug={node.slug}
+            title={node.title}
+            date={node.createdAt}
+            excerpt={node.content.childMarkdownRemark.excerpt}
+          />
       ))}
     </main>
   </Layout>
