@@ -1,3 +1,5 @@
+# Nathan Heffley's Gatsby Blog
+
 You'll need to create the `.env.development` and `.env.production` files by copying `.env.example` and providing the ID and access code to your Contentful space which has a `BlogPost` content type.
 
 Gatsby will try loading `title`, `slug`, `description`, `githubUrl`, and `content` fields from your blog posts, so you should define those fields on your content type.
