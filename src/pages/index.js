@@ -11,7 +11,6 @@ const IndexPage = ({ data }) => (
           <Excerpt key={node.id}
             slug={node.slug}
             title={node.title}
-            date={node.createdAt}
             excerpt={node.content.childMarkdownRemark.excerpt}
           />
       ))}
@@ -21,13 +20,12 @@ const IndexPage = ({ data }) => (
 
 export const query = graphql`
   query {
-    allContentfulBlogPost {
+    allContentfulBlogPost(sort: { fields: createdAt, order: DESC }) {
       edges {
         node {
           id
           title
           slug
-          createdAt(formatString: "MMMM DD, YYYY")
           content {
             childMarkdownRemark {
               excerpt(pruneLength: 500)
