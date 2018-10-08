@@ -21,8 +21,7 @@ const BlogPost = ({ data }) => {
       description={post.description}
     >
       <main className='container mx-auto p-6 pt-32'>
-        <h1 className='leading-tight text-black md:text-4xl'>{post.title}</h1>
-        <h2 className='mt-2 mb-4 text-grey leading-none'>{post.createdAt}</h2>
+        <h1 className='mb-2 leading-tight md:text-4xl'>{post.title}</h1>
         <div className='xl:flex xl:justify-between'>
           <article className='blog-post' dangerouslySetInnerHTML={{ __html: post.content.childMarkdownRemark.html }}></article>
           <aside className='text-center lg:text-left mt-12 xl:mt-0'>
@@ -40,9 +39,7 @@ export const query = graphql`
   query blogPostQuery($slug: String!) {
     contentfulBlogPost(slug: {eq: $slug}) {
       title
-      createdAt(formatString: "MMMM DD, YYYY")
       description
-      createdAt(formatString: "MMMM DD, YYYY")
       githubUrl
       content {
         childMarkdownRemark {
