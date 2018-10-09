@@ -2,18 +2,14 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import githubLogo from '../images/github.svg'
+import Title from '../components/title'
+import GitHubLink from './components/github-link'
+import LessonOverview from './components/lesson-overview'
+
+import './blog-post.css'
 
 const BlogPost = ({ data }) => {
   const post = data.contentfulBlogPost
-  console.log(post);
-
-  const viewGitHub = post.githubUrl ? (
-    <a href={post.githubUrl} className='flex items-center no-underline text-black xl:sticky xl:pin-t'>
-      <img src={githubLogo} alt='' style={{ opacity: 0.6 }} className='w-12 h-12 order-1 ml-4 lg:order-0 lg:ml-0 lg:mr-4' />
-      <span className='text-xl'>View Source on GitHub</span>
-    </a>
-  ) : ''
 
   return (
     <Layout
@@ -21,13 +17,17 @@ const BlogPost = ({ data }) => {
       description={post.description}
     >
       <main className='container mx-auto p-6 pt-32'>
-        <h1 className='mb-2 leading-tight md:text-4xl'>{post.title}</h1>
+        <Title
+          title={post.title}
+          lesson={post.lesson}
+        ></Title>
         <div className='xl:flex xl:justify-between'>
           <article className='blog-post' dangerouslySetInnerHTML={{ __html: post.content.childMarkdownRemark.html }}></article>
-          <aside className='text-center lg:text-left mt-12 xl:mt-0'>
-            <div className='inline-block xl:sticky xl:p-t-32'>
-              { viewGitHub }
+          <aside className='text-center lg:text-left mt-12 xl:mt-0 xl:ml-12 xl:flex xl:flex-col xl:justify-between'>
+            <div className={ 'flex-grow' + (post.githubUrl && post.lesson ? ' mb-12' : '') }>
+              { post.githubUrl ? (<GitHubLink url={ post.githubUrl } />) : '' }
             </div>
+            { (<LessonOverview currentId={ post.id } lesson={ post.lesson } />) }
           </aside>
         </div>
       </main>
@@ -38,9 +38,18 @@ const BlogPost = ({ data }) => {
 export const query = graphql`
   query blogPostQuery($slug: String!) {
     contentfulBlogPost(slug: {eq: $slug}) {
+      id
       title
       description
       githubUrl
+      lesson {
+        title
+        blog_post {
+          id
+          title
+          slug
+        }
+      }
       content {
         childMarkdownRemark {
           html

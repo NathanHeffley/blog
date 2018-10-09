@@ -22,6 +22,7 @@
 
 .blog-post {
   max-width: 45rem;
+  flex-shrink: 0;
 }
 
 .blog-post > *:first-child {
