@@ -5,6 +5,9 @@ const LessonOverview = ({ currentId, lesson }) => {
 
   if (lesson) {
     let articles = []
+
+    lesson.blog_post.sort((a, b) => a.createdAt.localeCompare(b.createdAt));
+
     for (let i = 0; i < lesson.blog_post.length; i++) {
       let article = lesson.blog_post[i]
       let isCurrentArticle = article.id === currentId
