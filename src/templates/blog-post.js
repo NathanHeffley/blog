@@ -48,6 +48,7 @@ export const query = graphql`
           id
           title
           slug
+          createdAt
         }
       }
       content {
