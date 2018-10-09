@@ -2,17 +2,20 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import Excerpt from '../components/excerpt'
+import Title from '../components/title'
 
 const IndexPage = ({ data }) => (
   <Layout title="Nathan Heffley | Specializing in Progressive Web Apps">
     <main className='container mx-auto p-6 pt-32'>
       {data.allContentfulBlogPost.edges.map(({ node }) => (
-          <Excerpt key={node.id}
+        <div key={node.id} className='mb-12'>
+          <Title
             slug={node.slug}
             title={node.title}
-            excerpt={node.content.childMarkdownRemark.excerpt}
-          />
+            lesson={node.lesson}
+          ></Title>
+          <p className='leading-normal text-grey-darker text-lg font-serif'>{node.content.childMarkdownRemark.excerpt}</p>
+        </div>
       ))}
     </main>
   </Layout>
@@ -26,6 +29,9 @@ export const query = graphql`
           id
           title
           slug
+          lesson {
+            title
+          }
           content {
             childMarkdownRemark {
               excerpt(pruneLength: 500)
