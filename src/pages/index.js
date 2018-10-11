@@ -31,6 +31,7 @@ export const query = graphql`
           slug
           lesson {
             title
+            slug
           }
           content {
             childMarkdownRemark {
