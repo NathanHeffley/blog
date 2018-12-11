@@ -21,3 +21,11 @@ Then you can put the files generated in the public directory onto a static site 
 ```bash
 gatsby serve
 ```
+
+## Hosting
+
+If you're interested, I wrote a post about [how I host this blog for free](https://www.nathanheffley.com/host-buzzword-powered-blog-for-free).
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
