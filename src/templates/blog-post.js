@@ -23,7 +23,7 @@ const BlogPost = ({ data }) => {
         ></Title>
         <div className='xl:flex xl:justify-between'>
           <article className='blog-post' dangerouslySetInnerHTML={{ __html: post.content.childMarkdownRemark.html }}></article>
-          <aside className='text-center lg:text-left mt-12 xl:mt-0 xl:ml-12 xl:flex xl:flex-col xl:justify-between'>
+          <aside className='mt-12 xl:mt-0 xl:ml-12 xl:flex xl:flex-col xl:justify-between'>
             <div className={ 'flex-grow' + (post.githubUrl && post.lesson ? ' mb-12' : '') }>
               { post.githubUrl ? (<GitHubLink url={ post.githubUrl } />) : '' }
             </div>
