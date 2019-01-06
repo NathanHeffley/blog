@@ -6,10 +6,12 @@ import lessonIcon from '../images/lesson.svg'
 const Title = ({ slug, title, lesson }) => (
   <div>
     { lesson ? (
-      <Link to={lesson.slug} className='flex items-center mb-2 font-light text-xl no-underline text-grey-dark'>
-        <img src={lessonIcon} alt='' style={{ opacity: 0.5 }} className='h-6 mr-2' />
-        { lesson.title }
-      </Link>
+      <div class="inline-block mb-2">
+        <Link to={lesson.slug} className='flex items-center font-light text-xl no-underline text-grey-dark'>
+          <img src={lessonIcon} alt='' style={{ opacity: 0.5 }} className='h-6 mr-2' />
+          { lesson.title }
+        </Link>
+      </div>
     ) : '' }
     <h2 className='mb-2 leading-tight md:text-4xl'>
       { slug ? (
