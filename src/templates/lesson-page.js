@@ -4,12 +4,19 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Title from '../components/title'
 
+import lessonIcon from '../images/lesson-heavy.svg'
+
 const LessonPage = ({ data }) => {
   data.contentfulLesson.blog_post.sort((a, b) => a.createdAt.localeCompare(b.createdAt));
 
   return (
     <Layout title="Nathan Heffley | Specializing in Progressive Web Apps">
       <main className='container mx-auto p-6 pt-32'>
+        <h1 class="flex items-center mb-12 text-5xl no-underline text-black">
+          <img src={lessonIcon} alt='' className='h-10 mr-4' />
+          {data.contentfulLesson.title}
+        </h1>
+
         {data.contentfulLesson.blog_post.map((node) => (
           <div key={ node.id } className='mb-12'>
             <Title
