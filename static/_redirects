@@ -1,0 +1,11 @@
+https://priceless-swirles-30d8fe.netlify.com https://www.nathanheffley.com 301!
+https://priceless-swirles-30d8fe.netlify.com/* https://www.nathanheffley.com/:splat 301!
+
+/blog /
+/blog/launch-with-a-landing-page /launch-with-a-landing-page
+/blog/getting-started-with-react-in-laravel-5-5 /getting-started-with-react-in-laravel
+/blog/learning-laravel-installation-configuration /learning-laravel/installation-configuration
+/blog/learning-laravel-really-radical-routing /learning-laravel/really-radical-routing
+/blog/learning-laravel-eyeing-up-views /learning-laravel/eyeing-up-views
+/blog/laravel-react-planning-a-forum /laravel-react-forum/planning-a-forum
+/blog/laravel-react-posting-threads /laravel-react-forum/posting-threads
