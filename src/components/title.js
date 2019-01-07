@@ -13,7 +13,7 @@ const Title = ({ slug, title, lesson }) => (
         </Link>
       </div>
     ) : '' }
-    <h2 className='mb-2 leading-tight md:text-4xl'>
+    <h2 className='mb-2 leading-tight text-2xl md:text-4xl'>
       { slug ? (
         <Link to={ slug } className='no-underline text-black'>{title}</Link>
       ) : title }
