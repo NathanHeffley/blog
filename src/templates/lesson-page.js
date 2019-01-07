@@ -10,12 +10,19 @@ const LessonPage = ({ data }) => {
   data.contentfulLesson.blog_post.sort((a, b) => a.createdAt.localeCompare(b.createdAt));
 
   return (
-    <Layout title="Nathan Heffley | Specializing in Progressive Web Apps">
+    <Layout
+      title={data.contentfulLesson.title}
+      description={data.contentfulLesson.description.childMarkdownRemark.raw}
+    >
       <main className='container mx-auto p-6 pt-32'>
-        <h1 class="flex items-center mb-12 text-5xl no-underline text-black">
-          <img src={lessonIcon} alt='' className='h-10 mr-4' />
+        <h1 className='flex items-center mb-2 no-underline text-black text-3xl md:text-5xl'>
+          <img src={lessonIcon} alt='' className='h-6 mr-2 md:h-10 md:mr-4' />
           {data.contentfulLesson.title}
         </h1>
+        <span
+          className='block mb-12 leading-normal text-black text-2xl'
+          dangerouslySetInnerHTML={{ __html: data.contentfulLesson.description.childMarkdownRemark.html }}
+        ></span>
 
         {data.contentfulLesson.blog_post.map((node) => (
           <div key={ node.id } className='mb-12'>
@@ -36,6 +43,11 @@ export const query = graphql`
     contentfulLesson(slug: {eq: $slug}) {
       title
       slug
+      description {
+        childMarkdownRemark {
+          html
+        }
+      }
       blog_post {
         id
         title
