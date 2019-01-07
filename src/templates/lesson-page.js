@@ -15,8 +15,8 @@ const LessonPage = ({ data }) => {
       description={data.contentfulLesson.description.childMarkdownRemark.raw}
     >
       <main className='container mx-auto p-6 pt-32'>
-        <h1 className='flex items-center mb-2 no-underline text-black text-3xl md:text-5xl'>
-          <img src={lessonIcon} alt='' className='h-6 mr-2 md:h-10 md:mr-4' />
+        <h1 className='flex mb-2 no-underline text-black text-3xl md:text-5xl'>
+          <img src={lessonIcon} alt='' className='h-6 mr-2 mt-1 md:h-10 md:mr-4 md:mt-2' />
           {data.contentfulLesson.title}
         </h1>
         <span

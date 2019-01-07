@@ -8,6 +8,10 @@
   order: 1;
 }
 
+.mt-1px {
+  margin-top: 1px;
+}
+
 @media (min-width: 992px) {
   .lg\:order-0 {
     order: 0;
