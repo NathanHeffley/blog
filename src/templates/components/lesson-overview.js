@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 const LessonOverview = ({ currentId, lesson }) => {
   let lessonOverview = ''
@@ -29,7 +30,11 @@ const LessonOverview = ({ currentId, lesson }) => {
 
     lessonOverview = (
       <div className='text-left'>
-        <h2 className='font-light text-4xl mb-4'>{ lesson.title }</h2>
+        <h2 className='font-light text-4xl mb-4'>
+          <Link to={lesson.slug} className='no-underline text-inherit'>
+            {lesson.title}
+          </Link>
+        </h2>
         <ul className='font-light text-2xl list-reset'>
           {articles}
         </ul>
