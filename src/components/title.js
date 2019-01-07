@@ -7,9 +7,9 @@ const Title = ({ slug, title, lesson }) => (
   <div>
     { lesson ? (
       <div class="inline-block mb-2">
-        <Link to={lesson.slug} className='flex items-center font-light text-xl no-underline text-grey-dark'>
+        <Link to={lesson.slug} className='flex font-light text-xl no-underline text-grey-dark'>
           <img src={lessonIcon} alt='' style={{ opacity: 0.5 }} className='h-6 mr-2' />
-          { lesson.title }
+          <span className='mt-1px'>{ lesson.title }</span>
         </Link>
       </div>
     ) : '' }
