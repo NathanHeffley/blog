@@ -20,7 +20,7 @@ const LessonOverview = ({ currentId, lesson }) => {
 
       articles.push(
         <li className={ 'mb-4 ' + liClasses } key={ article.id }>
-          <Link to={href} className='no-underline text-inherit relative'>
+          <Link to={href} className='inline-block no-underline text-inherit relative'>
             <span className={ 'text-xl p-2 mr-2 rounded-full absolute pin-number ' + spanClasses }>{ number }</span>
             <span className='block pl-10'>{ article.title }</span>
           </Link>
