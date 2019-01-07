@@ -44,6 +44,7 @@ export const query = graphql`
       githubUrl
       lesson {
         title
+        slug
         blog_post {
           id
           title

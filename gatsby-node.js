@@ -12,12 +12,28 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+        allContentfulLesson {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
       }
     `).then(result => {
       result.data.allContentfulBlogPost.edges.forEach((edge) => {
         createPage({
           path: edge.node.slug,
           component: path.resolve('./src/templates/blog-post.js'),
+          context: {
+            slug: edge.node.slug,
+          },
+        })
+      })
+      result.data.allContentfulLesson.edges.forEach((edge) => {
+        createPage({
+          path: edge.node.slug,
+          component: path.resolve('./src/templates/lesson-page.js'),
           context: {
             slug: edge.node.slug,
           },
