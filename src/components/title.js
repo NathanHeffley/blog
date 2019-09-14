@@ -6,7 +6,7 @@ import lessonIcon from '../images/lesson.svg'
 const Title = ({ slug, title, lesson }) => (
   <div>
     {lesson ? (
-      <div class="inline-block mb-2">
+      <div className="inline-block mb-2">
         <Link
           to={lesson.slug}
           className="flex items-center font-light text-xl no-underline text-gray-700"
