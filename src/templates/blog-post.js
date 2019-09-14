@@ -6,28 +6,29 @@ import Title from '../components/title'
 import GitHubLink from './components/github-link'
 import LessonOverview from './components/lesson-overview'
 
-import './blog-post.css'
-
 const BlogPost = ({ data }) => {
   const post = data.contentfulBlogPost
 
   return (
-    <Layout
-      title={post.title}
-      description={post.description}
-    >
-      <main className='container mx-auto p-6 pt-32'>
-        <Title
-          title={post.title}
-          lesson={post.lesson}
-        ></Title>
-        <div className='xl:flex xl:justify-between'>
-          <article className='blog-post' dangerouslySetInnerHTML={{ __html: post.content.childMarkdownRemark.html }}></article>
-          <aside className='mt-12 xl:mt-0 xl:ml-12 xl:flex xl:flex-col xl:justify-between'>
-            <div className={ 'flex-grow' + (post.githubUrl && post.lesson ? ' mb-12' : '') }>
-              { post.githubUrl ? (<GitHubLink url={ post.githubUrl } />) : '' }
+    <Layout title={post.title} description={post.description}>
+      <main className="container mx-auto p-6 pt-32">
+        <Title title={post.title} lesson={post.lesson} />
+        <div className="xl:flex xl:justify-between">
+          <article
+            className="blog-post"
+            dangerouslySetInnerHTML={{
+              __html: post.content.childMarkdownRemark.html,
+            }}
+          />
+          <aside className="mt-12 xl:mt-0 xl:ml-12 xl:flex xl:flex-col xl:justify-between">
+            <div
+              className={
+                'flex-grow' + (post.githubUrl && post.lesson ? ' mb-12' : '')
+              }
+            >
+              {post.githubUrl ? <GitHubLink url={post.githubUrl} /> : ''}
             </div>
-            { (<LessonOverview currentId={ post.id } lesson={ post.lesson } />) }
+            {<LessonOverview currentId={post.id} lesson={post.lesson} />}
           </aside>
         </div>
       </main>
@@ -37,7 +38,7 @@ const BlogPost = ({ data }) => {
 
 export const query = graphql`
   query blogPostQuery($slug: String!) {
-    contentfulBlogPost(slug: {eq: $slug}) {
+    contentfulBlogPost(slug: { eq: $slug }) {
       id
       title
       description

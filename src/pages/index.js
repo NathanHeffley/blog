@@ -10,7 +10,7 @@ const IndexPage = ({ data }) => (
       {data.allContentfulBlogPost.edges.map(({ node }) => (
         <div key={node.id} className="mb-12">
           <Title slug={node.slug} title={node.title} lesson={node.lesson} />
-          <p className="leading-normal text-gray-700 text-lg font-serif">
+          <p className="leading-normal text-gray-700 dark:text-gray-300 text-lg font-serif">
             {node.content.childMarkdownRemark.excerpt}
           </p>
         </div>

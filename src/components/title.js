@@ -1,31 +1,26 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import lessonIcon from '../images/lesson.svg'
+import LessonIcon from '../images/lesson.svg'
 
 const Title = ({ slug, title, lesson }) => (
   <div>
     {lesson ? (
-      <div class="inline-block mb-2">
+      <div className="inline-block mb-2">
         <Link
           to={lesson.slug}
-          className="flex items-center font-light text-xl no-underline text-gray-700"
+          className="flex items-center font-light text-xl no-underline text-gray-700 dark:text-white"
         >
-          <img
-            src={lessonIcon}
-            alt=""
-            style={{ opacity: 0.5 }}
-            className="h-6 mr-2"
-          />
+          <LessonIcon className="h-6 mr-2" />
           <span className="leading-none">{lesson.title}</span>
         </Link>
       </div>
     ) : (
       ''
     )}
-    <h2 className="mb-2 leading-tight text-2xl md:text-4xl">
+    <h2 className="mb-2 leading-tight text-2xl md:text-4xl text-black dark:text-white">
       {slug ? (
-        <Link to={slug} className="no-underline text-black">
+        <Link to={slug} className="no-underline">
           {title}
         </Link>
       ) : (

@@ -58,3 +58,18 @@ code {
 pre.prettyprinted::-webkit-scrollbar {
   height: 0;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    @apply bg-gray-900;
+  }
+
+  .blog-post p {
+    @apply text-gray-300;
+  }
+
+  .blog-post h2,
+  .blog-post h3 {
+    @apply text-white;
+  }
+}
