@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import twitterLogo from '../images/twitter.svg'
-import githubLogo from '../images/github.svg'
+import TwitterLogo from '../images/twitter.svg'
+import GithubLogo from '../images/github.svg'
 
 const Header = ({ siteTitle }) => (
   <header className="shadow fixed w-full bg-white dark:bg-gray-900 z-50">
@@ -20,13 +20,13 @@ const Header = ({ siteTitle }) => (
           href="https://twitter.com/NathanHeffley"
           className="w-8 h-8 ml-4 no-underline"
         >
-          <img src={twitterLogo} alt="Twitter" className="h-full" />
+          <TwitterLogo className="h-full dark:text-gray-200" />
         </a>
         <a
           href="https://github.com/NathanHeffley"
           className="w-8 h-8 ml-4 no-underline"
         >
-          <img src={githubLogo} alt="GitHub" className="h-full" />
+          <GithubLogo className="h-full dark:text-gray-200" />
         </a>
       </div>
     </nav>

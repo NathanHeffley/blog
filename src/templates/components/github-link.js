@@ -1,19 +1,14 @@
 import React from 'react'
 
-import githubLogo from '../../images/github.svg'
+import GithubLogo from '../../images/github.svg'
 
 const GitHubLink = ({ url }) => (
   <div className="inline-block xl:sticky xl:p-t-32">
     <a
       href={url}
-      className="flex items-center no-underline text-black dark:text-gray-300"
+      className="flex items-center no-underline text-gray-700 dark:text-gray-300"
     >
-      <img
-        src={githubLogo}
-        alt=""
-        style={{ opacity: 0.6 }}
-        className="w-12 h-12 mr-4"
-      />
+      <GithubLogo className="w-12 h-12 mr-4 fill-current" />
       <span className="text-xl">View Source on GitHub</span>
     </a>
   </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import lessonIcon from '../images/lesson.svg'
+import LessonIcon from '../images/lesson.svg'
 
 const Title = ({ slug, title, lesson }) => (
   <div>
@@ -11,12 +11,7 @@ const Title = ({ slug, title, lesson }) => (
           to={lesson.slug}
           className="flex items-center font-light text-xl no-underline text-gray-700 dark:text-white"
         >
-          <img
-            src={lessonIcon}
-            alt=""
-            style={{ opacity: 0.5 }}
-            className="h-6 mr-2"
-          />
+          <LessonIcon className="h-6 mr-2" />
           <span className="leading-none">{lesson.title}</span>
         </Link>
       </div>

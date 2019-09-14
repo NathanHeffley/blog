@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Title from '../components/title'
 
-import lessonIcon from '../images/lesson-heavy.svg'
+import LessonIcon from '../images/lesson-heavy.svg'
 
 const LessonPage = ({ data }) => {
   data.contentfulLesson.blog_post.sort((a, b) =>
@@ -18,11 +18,8 @@ const LessonPage = ({ data }) => {
     >
       <main className="container mx-auto p-6 pt-32">
         <h1 className="flex mb-2 no-underline text-black dark:text-white leading-tight text-3xl md:text-5xl font-semibold">
-          <img
-            src={lessonIcon}
-            alt=""
-            className="h-6 mr-2 mt-2 md:h-10 md:mr-4 md:mt-3"
-          />
+          <LessonIcon className="h-6 mr-2 mt-2 md:h-10 md:mr-4 md:mt-3" />
+
           {data.contentfulLesson.title}
         </h1>
         <span

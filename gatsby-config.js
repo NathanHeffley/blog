@@ -1,5 +1,5 @@
 const tailwindcss = require('tailwindcss')
-require("dotenv").config({
+require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
@@ -35,5 +35,13 @@ module.exports = {
       },
     },
     'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /images/,
+        },
+      },
+    },
   ],
 }
