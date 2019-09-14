@@ -1,22 +1,8 @@
-@tailwind preflight;
+@tailwind base;
 
 @tailwind components;
 
 @tailwind utilities;
-
-.order-1 {
-  order: 1;
-}
-
-.mt-1px {
-  margin-top: 1px;
-}
-
-@media (min-width: 992px) {
-  .lg\:order-0 {
-    order: 0;
-  }
-}
 
 @media (min-width: 1200px) {
   .xl\:p-t-32 {
@@ -38,11 +24,12 @@
   margin-top: 2rem;
   margin-bottom: 1rem;
   line-height: 1;
+  @apply text-2xl;
 }
 
 .blog-post h2,
 .blog-post h3 {
-  @apply text-black
+  @apply text-black;
 }
 
 .blog-post h2 + h3 {
@@ -52,20 +39,20 @@
 .blog-post p {
   line-height: 1.5;
   margin: 1rem 0;
-  @apply text-grey-darker text-lg font-serif
+  @apply text-gray-700 text-lg font-serif;
 }
 
 pre.prettyprinted {
   background: #000;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
   line-height: 1.5;
   padding: 1em;
   overflow-x: scroll;
 }
 
 code {
-  font-size: .75rem;
-  @apply text-xs font-mono
+  font-size: 0.75rem;
+  @apply text-xs font-mono;
 }
 
 pre.prettyprinted::-webkit-scrollbar {

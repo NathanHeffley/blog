@@ -6,15 +6,13 @@ import Title from '../components/title'
 
 const IndexPage = ({ data }) => (
   <Layout title="Nathan Heffley | Specializing in Progressive Web Apps">
-    <main className='container mx-auto p-6 pt-32'>
+    <main className="container mx-auto p-6 pt-32">
       {data.allContentfulBlogPost.edges.map(({ node }) => (
-        <div key={node.id} className='mb-12'>
-          <Title
-            slug={node.slug}
-            title={node.title}
-            lesson={node.lesson}
-          ></Title>
-          <p className='leading-normal text-grey-darker text-lg font-serif'>{node.content.childMarkdownRemark.excerpt}</p>
+        <div key={node.id} className="mb-12">
+          <Title slug={node.slug} title={node.title} lesson={node.lesson} />
+          <p className="leading-normal text-gray-700 text-lg font-serif">
+            {node.content.childMarkdownRemark.excerpt}
+          </p>
         </div>
       ))}
     </main>
