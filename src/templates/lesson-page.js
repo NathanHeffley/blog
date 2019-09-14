@@ -17,7 +17,7 @@ const LessonPage = ({ data }) => {
       description={data.contentfulLesson.description.childMarkdownRemark.raw}
     >
       <main className="container mx-auto p-6 pt-32">
-        <h1 className="flex mb-2 no-underline text-black leading-tight text-3xl md:text-5xl font-semibold">
+        <h1 className="flex mb-2 no-underline text-black dark:text-white leading-tight text-3xl md:text-5xl font-semibold">
           <img
             src={lessonIcon}
             alt=""
@@ -26,7 +26,7 @@ const LessonPage = ({ data }) => {
           {data.contentfulLesson.title}
         </h1>
         <span
-          className="block mb-12 leading-normal text-black text-2xl"
+          className="block mb-12 leading-normal text-black dark:text-white text-2xl"
           dangerouslySetInnerHTML={{
             __html: data.contentfulLesson.description.childMarkdownRemark.html,
           }}
@@ -35,7 +35,7 @@ const LessonPage = ({ data }) => {
         {data.contentfulLesson.blog_post.map(node => (
           <div key={node.id} className="mb-12">
             <Title slug={node.slug} title={node.title} />
-            <p className="leading-normal text-gray-700 text-lg font-serif">
+            <p className="leading-normal text-gray-700 dark:text-gray-300 text-lg font-serif">
               {node.content.childMarkdownRemark.excerpt}
             </p>
           </div>
