@@ -9,7 +9,7 @@ const Title = ({ slug, title, lesson }) => (
       <div className="inline-block mb-2">
         <Link
           to={lesson.slug}
-          className="flex items-center font-light text-xl no-underline text-gray-700"
+          className="flex items-center font-light text-xl no-underline text-gray-700 dark:text-white"
         >
           <img
             src={lessonIcon}
@@ -23,9 +23,9 @@ const Title = ({ slug, title, lesson }) => (
     ) : (
       ''
     )}
-    <h2 className="mb-2 leading-tight text-2xl md:text-4xl">
+    <h2 className="mb-2 leading-tight text-2xl md:text-4xl text-black dark:text-white">
       {slug ? (
-        <Link to={slug} className="no-underline text-black">
+        <Link to={slug} className="no-underline">
           {title}
         </Link>
       ) : (
